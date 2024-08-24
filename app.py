@@ -8,7 +8,7 @@ API_KEY = 'YOUR_GOOGLE_API_KEY'
 SEARCH_ENGINE_ID = 'YOUR_SEARCH_ENGINE_ID'
 
 def google_search(query):
-    search_url = f"https://www.googleapis.com/customsearch/v1?q={query}&key={API_KEY}&cx={SEARCH_ENGINE_ID}"
+    search_url = f"https://www.googleapis.com/customsearch/v1?q={}&key={}&cx="
     response = requests.get(search_url)
     search_results = response.json()
 
@@ -17,7 +17,7 @@ def google_search(query):
         title = first_result['title']
         snippet = first_result['snippet']
         link = first_result['link']
-        return f"{title}\n{snippet}\nRead more: {link}"
+        return f"{title}\n{snippet}\nRead more: {}"
     else:
         return "Sorry, I couldn't find any information on that."
 
